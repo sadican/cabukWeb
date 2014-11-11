@@ -2,16 +2,14 @@
 ### keywords:
 # textbox
 # button
-# btn-group
-# btn-toolbar
 # radio
+# checkbox
 # dropdown
 # alert
 # list
 # navbar
 # well
 # panel
-# 
 
 ### parameters:
 # id :: unique id of object
@@ -20,4 +18,4 @@
 # isRequired :: true, false (default)
 # inputSize :: length of input (default = 128)
 # orientation :: vertical, horizontal (default), justified
-# 
+# type :: single, group
