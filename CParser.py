@@ -1,6 +1,11 @@
-print "Hello world!"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 class CWParser:
-  
-  def __init__(self):
-    print("hobarey!")
+	""" CabukWeb script parser """
+	
+	def __init__(self):
+		print('hobarey!')
+	
+	def readFile(self):
+	  = open("test.txt","r") #opens file with name of "test.txt"
