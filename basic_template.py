@@ -2,6 +2,7 @@ class BasicTemplate:
   'Basic template for html page'
   
   def __init__(self):
+    print 'hobarey!'
   
   def getHeader(self, title):
     return '<!DOCTYPE html>'
