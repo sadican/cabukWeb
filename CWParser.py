@@ -3,25 +3,26 @@
 
 class CWParser:
 	""" CabukWeb script parser """
+	CW_FILE_COMMENT = "#"
 	
 	def __init__(self):
 		print('hobarey!')
 	
-	def readFile(self, cwFileName, cwFileExtension):
-		cwFile = open(cwFileName + "." + cwFileExtension, "r", encoding="utf8")
+	def readCWContent(self, cwFileName):
+		cwFile = open(cwFileName, "r", encoding="utf8")
 		
 		commands = []
 		for line in cwFile:
-			commands.append(line)
-			print(line)		
+			if (line[0] != self.CW_FILE_COMMENT):
+				commands.append(line)
 		
 		cwFile.close()
+		return commands
 		
 if __name__ == '__main__':
 	cwparser = CWParser()
-	cwFileName = "page"
-	cwFileExtension = "cw"
+	cwFileName = "page.cw"
 	
 	print("processing...")
-	cwparser.readFile(cwFileName, cwFileExtension)
+	cwparser.readCWContent(cwFileName)
 	print("\n")
