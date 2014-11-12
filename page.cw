@@ -4,12 +4,6 @@
 # button
 # radio
 # checkbox
-# dropdown
-# alert
-# list
-# navbar
-# well
-# panel
 
 ### parameters:
 # id :: unique id of object
@@ -19,3 +13,7 @@
 # inputSize :: length of input (default = 128)
 # orientation :: vertical, horizontal (default), justified
 # type :: single, group
+
+### sample codes:
+textbox --name=username --id=username --class=regForm inputSize=128 --text=Username
+textbox --name=password --id=password --class=regForm inputSize=128 --text=Password
