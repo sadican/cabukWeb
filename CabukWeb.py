@@ -6,10 +6,15 @@ from Textbox import Textbox
 
 
 class CabukWeb:
-    def __init__(self):
+    def __init__(self, file_name):
         self.cwFile = CWFile()
         self.commands = []
         self.ui_objects = []
+        # read script file
+        if file_name != "":
+            self.read_script(file_name)
+        # parse script file
+        self.parse()
 
     def parse(self):
         for command in self.commands:
@@ -17,10 +22,6 @@ class CabukWeb:
 
             if args[0].strip() == Textbox.COMMAND:
                 self.ui_objects.append(Textbox(args[1:len(args)]))
-
-        for obj in self.ui_objects:
-            print(obj.get_asp())
-            print(obj.get_html())
 
     def read_script(self, file_name):
         cw_file = open(file_name, "r")
@@ -39,3 +40,11 @@ class CabukWeb:
         else:
             for command in self.commands:
                 print(command)
+
+    def show_html(self):
+        for obj in self.ui_objects:
+            print(obj.get_html())
+
+    def show_asp(self):
+        for obj in self.ui_objects:
+            print(obj.get_html())
