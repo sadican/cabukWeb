@@ -34,6 +34,16 @@ class CabukWeb:
         cw_file.close()
         return self.commands
 
+    def get_html(self):
+        code = ""
+        for ui_object in self.ui_objects:
+            code += ui_object.get_html() + "\n"
+
+    def get_asp(self):
+        code = ""
+        for ui_object in self.ui_objects:
+            code += ui_object.get_asp() + "\n"
+
     def show_script(self):
         if not self.commands:
             return "empty command list"
@@ -47,4 +57,4 @@ class CabukWeb:
 
     def show_asp(self):
         for obj in self.ui_objects:
-            print(obj.get_html())
+            print(obj.get_asp())
