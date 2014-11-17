@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from CWParser import CWParser
+from CabukWeb import CabukWeb
 
-CW_FILENAME = "page.cw"
 
-cwParser = CWParser()
-cwParser.readCWContent(CW_FILENAME)
-cwParser.showCWContent()
-cwParser.parse()
+def main():
+    try:
+        cw_filename = "page.cw"
+        cw_parser = CabukWeb()
+        cw_parser.read_script(cw_filename)
+        cw_parser.show_script()
+        cw_parser.parse()
+
+    except Exception:
+        print("Arrrggh... exception!")
+
+if __name__ == "__main__":
+    main()
