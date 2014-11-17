@@ -1,28 +1,41 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from CWFile import CWFile
+from Textbox import Textbox
+
 class CWParser:
-	""" CabukWeb script parser """
-	CW_FILE_COMMENT = "#"
-	
+
 	def __init__(self):
-		print('hobarey!')
+		self.cwFile = CWFile()
+		self.commands = []
+		self.uiObjs = []
+
+	def parse(self):
+		for command in self.commands:
+			args = command.split(self.cwFile.DELIMITER_COMMAND)
+
+			if args[0].strip() == Textbox.COMMAND:
+				self.uiObjs.append(Textbox(args[1:len(args)]))
+
+		for obj in self.uiObjs:
+			print obj.getASP()
+			print obj.getHTML()
 	
 	def readCWContent(self, cwFileName):
-		cwFile = open(cwFileName, "r", encoding="utf8")
+		cwFile = open(cwFileName, "r")
 		
-		commands = []
+		self.commands = []
 		for line in cwFile:
-			if (line[0] != self.CW_FILE_COMMENT):
-				commands.append(line)
+			if line[0] != self.cwFile.COMMENT and line != "" and line != "\n":
+				self.commands.append(line.strip())
 		
 		cwFile.close()
-		return commands
-		
-if __name__ == '__main__':
-	cwparser = CWParser()
-	cwFileName = "page.cw"
-	
-	print("processing...")
-	cwparser.readCWContent(cwFileName)
-	print("\n")
+		return self.commands
+
+	def showCWContent(self):
+		if self.commands == []:
+			print "no command!"
+		else:
+			for command in self.commands:
+				print command

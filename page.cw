@@ -13,5 +13,5 @@
 # inputSize :: length of input (default = 128)
 
 ### sample codes:
-textbox --name=username --id=username --class=regForm inputSize=128 --text=Username
-textbox --name=password --id=password --class=regForm inputSize=128 --text=Password
+textbox --name=username --id=username --class=regForm --inputSize=128 --placeholder=Username
+textbox --name=password --id=password --class=regForm --inputSize=128 --placeholder=Password
