@@ -9,16 +9,16 @@ class CWParser:
     def __init__(self):
         self.cwFile = CWFile()
         self.commands = []
-        self.ui_objs = []
+        self.ui_objects = []
 
     def parse(self):
         for command in self.commands:
             args = command.split(self.cwFile.DELIMITER_COMMAND)
 
             if args[0].strip() == Textbox.COMMAND:
-                self.ui_objs.append(Textbox(args[1:len(args)]))
+                self.ui_objects.append(Textbox(args[1:len(args)]))
 
-        for obj in self.ui_objs:
+        for obj in self.ui_objects:
             print(obj.get_asp())
             print(obj.get_html())
 
