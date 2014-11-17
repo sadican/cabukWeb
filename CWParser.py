@@ -9,20 +9,18 @@ class CWParser:
     def __init__(self):
         self.cwFile = CWFile()
         self.commands = []
-        self.uiObjs = []
+        self.ui_objs = []
 
     def parse(self):
         for command in self.commands:
             args = command.split(self.cwFile.DELIMITER_COMMAND)
 
             if args[0].strip() == Textbox.COMMAND:
-                self.uiObjs.append(Textbox(args[1:len(args)]))
+                self.ui_objs.append(Textbox(args[1:len(args)]))
 
-        for obj in self.uiObjs:
-            print
-            obj.getASP()
-            print
-            obj.getHTML()
+        for obj in self.ui_objs:
+            print(obj.get_asp())
+            print(obj.get_html())
 
     def read_cw_script(self, file_name):
         cw_file = open(file_name, "r")
@@ -35,10 +33,9 @@ class CWParser:
         cw_file.close()
         return self.commands
 
-    def show_cw_script(self, file_name = ""):
-        if self.commands == []:
-            self.read_cw_script()
+    def show_cw_script(self):
+        if not self.commands:
+            return "empty command list"
         else:
             for command in self.commands:
-                print
-                command
+                print(command)
