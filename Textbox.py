@@ -9,7 +9,7 @@ class Textbox:
     PREFIX = "tb_"
 
     ARG_OBJ_ID = "id"
-    ARG_CSS_CLASS = "cssClass"
+    ARG_CSS_CLASS = "class"
     ARG_IS_REQUIRED = "isRequired"
     ARG_INPUT_SIZE = "inputSize"
     ARG_PLACEHOLDER = "placeholder"
