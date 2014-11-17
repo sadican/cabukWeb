@@ -5,7 +5,7 @@ from CWFile import CWFile
 from Textbox import Textbox
 
 
-class CWParser:
+class CabukWeb:
     def __init__(self):
         self.cwFile = CWFile()
         self.commands = []
