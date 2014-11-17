@@ -9,7 +9,6 @@ def main():
         cw_filename = "page.cw"
         cw_parser = CabukWeb()
         cw_parser.read_script(cw_filename)
-        cw_parser.show_script()
         cw_parser.parse()
 
     except Exception:
