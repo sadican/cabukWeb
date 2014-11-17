@@ -7,9 +7,8 @@ from CabukWeb import CabukWeb
 def main():
     try:
         cw_filename = "page.cw"
-        cw_parser = CabukWeb()
-        cw_parser.read_script(cw_filename)
-        cw_parser.parse()
+        cw_parser = CabukWeb(cw_filename)
+        cw_parser.show_asp()
 
     except Exception:
         print("Arrrggh... exception!")
