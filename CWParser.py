@@ -22,7 +22,7 @@ class CWParser:
             print(obj.get_asp())
             print(obj.get_html())
 
-    def read_cw_script(self, file_name):
+    def read_script(self, file_name):
         cw_file = open(file_name, "r")
 
         self.commands = []
@@ -33,7 +33,7 @@ class CWParser:
         cw_file.close()
         return self.commands
 
-    def show_cw_script(self):
+    def show_script(self):
         if not self.commands:
             return "empty command list"
         else:
