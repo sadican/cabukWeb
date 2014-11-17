@@ -31,7 +31,7 @@ class Textbox:
                 # split arg key - value
                 temp_arg = arg.split(CWFile.DELIMITER_ARG)
                 arg_name = temp_arg[0]
-                arg_value = temp_arg[1]
+                arg_value = temp_arg[1].strip()
 
                 if arg_name == self.ARG_OBJ_ID:
                     self.obj_id = self.PREFIX + arg_value
